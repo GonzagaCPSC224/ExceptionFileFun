@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -63,6 +64,11 @@ public class Main {
             PrintStream outFile = new PrintStream(new File("out.txt"));
             // use just like System.out
             // task: write out 10 random numbers in [1, 6]
+            Random rand = new Random();
+            for (int i = 0; i < 10; i++) {
+                outFile.print((rand.nextInt(6) + 1) + " \n");
+            }
+            outFile.close();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
